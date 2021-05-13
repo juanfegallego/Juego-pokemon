@@ -2,8 +2,8 @@
 class Fighter{
 
     constructor(nombre,ataque,defensa,tecnica,velocidad){
-        this.vida = 300;
-        this.suerte = Math.floor(Math.random() *11);
+        this.vida = 400;
+        this.suerte = Math.floor(Math.random() *15);
         this.nombre = nombre;
         this.ataque = ataque;
         this.defensa = defensa;
@@ -12,14 +12,14 @@ class Fighter{
     }
 
 
-    hit(enemy){
+    attack(enemy){
         enemy.vida -= this.ataque - (enemy.defensa * (enemy.suerte / this.velocidad));
     }
 
     
-    specialHit(enemy){
-        enemy.vida -= this.ataque + this.tecnica - (enemy.defensa * (enemy.suerte / this.velocidad));
-    }
+    // specialHit(enemy){
+    //     enemy.vida -= this.ataque + this.tecnica - (enemy.defensa * (enemy.suerte / this.velocidad));
+    // }
 }
 
 
@@ -36,3 +36,10 @@ let allPlayers = {
     "3" : player3,
     "4" : player4
 }
+
+//Acciones
+
+player1.attack(player2);
+// player3.hit(player3);
+
+console.log(player1,player2,player3,player4);
