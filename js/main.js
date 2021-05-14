@@ -41,7 +41,7 @@ const chooseFighter = (fighter) => {
                 setTimeout(() => {
                     fight();
                     cambiaFase("fase4");
-                }, 5000);
+                }, 1000); //tiene que ser 5000
             }
             
         }
@@ -60,7 +60,6 @@ const llenaEquipos = () => {
     equipos.innerHTML = `
     <div class="teamCharacters">
         <div><img class="picFighter" src="img/${team1[0].nombre}.png" alt="luchador1"></div>
-
     </div>
     <div class="fightPanel"><img class="fotoVersus" src="img/fight.jpg" alt="lucha"></div>
     <div class="teamCharacters">
@@ -73,31 +72,40 @@ const llenaEquipos = () => {
 const fight = () => {
     let fight = document.getElementById("fight");
     fight.innerHTML =
-    `<div class="teamCharacters">
-        <div class="life"><progress id="healthP1" value="400" min="0" max="400"></progress></div>
-        <div><img class="picFigther" src="img/${team1[0].nombre}.png" alt="luchador1"></div>
-    </div>
-    <div class="teamCharacters">
-        <div class="life"><progress id="healthP1" value="400" min="0" max="400"></progress></div>
-        <div><img class="picFighter" src="img/${team2[0].nombre}.png" alt="luchador2"></div>
-    </div>`
+    `<div class="batalla" id="fight">
+    <div class="pelea" id="healthP1"></div>
+    <div><img class="fighter1" src="img/${team1[0].nombre}.png" alt="luchador1"></div>
+    <div><img class="pokeball" onclick="fighting()" src="img/start.png" alt="start"></div>
+    <div class="pelea" id="healthP2"></div>
+    <div><img class="fighter2" src="img/${team2[0].nombre}.png" alt="luchador2"></div>
+</div>`
     console.log("este team 1 fight", team1);
     console.log("este team 2 fight", team2);
 }
+
+
 
 const fighting = () => {
 
     p1 = team1[0];
     p2 = team2[0];
 
-
     p1.attack(p2);
     p2.attack(p1);
-
+    updateLife();
     console.log(p1.vida,p2.vida);
     // do{
 
     // }while();
 
     if(p1<=0 || p2 <=0){cambiaFase("fase5")}
+}
+
+const updateLife = () => {
+    let vidaBarra1 = p1.vida;
+    let vidaBarra2 = p2.vida;
+        vidaBarra1 = (vidaBarra1 * 100)/400;
+        document.getElementById("healthP1").style.width = vidaBarra1+"%";
+        vidaBarra2 = (vidaBarra2 * 100)/400;
+        document.getElementById("healthP2").style.width = vidaBarra2+"%";
 }
