@@ -72,13 +72,11 @@ const llenaEquipos = () => {
 const fight = () => {
     let fight = document.getElementById("fight");
     fight.innerHTML =
-    `<div class="batalla" id="fight">
-    <div class="pelea" id="healthP1"></div>
+    `
     <div><img class="fighter1" src="img/${team1[0].nombre}.png" alt="luchador1"></div>
     <div><img class="pokeball" onclick="fighting()" src="img/start.png" alt="start"></div>
-    <div class="pelea" id="healthP2"></div>
     <div><img class="fighter2" src="img/${team2[0].nombre}.png" alt="luchador2"></div>
-</div>`
+    </div>`
     console.log("este team 1 fight", team1);
     console.log("este team 2 fight", team2);
 }
@@ -100,6 +98,25 @@ const fighting = () => {
 
     if(p1<=0 || p2 <=0){cambiaFase("fase5")}
 }
+
+//intento de vida a 0
+// if ((fighter1.life > 0 ) && (fighter2.life > 0 )) {
+
+//     life1.innerHTML = `${fighter1.life}`;
+//     life2.innerHTML = `${fighter2.life}`;
+
+// } else if (fighter1.life <= 0){ 
+
+//     life1.innerHTML = "0" 
+
+// } else {
+
+//         life2.innerHTML = "0"
+// }
+     
+
+// Winner();{}
+
 
 const updateLife = () => {
     let vidaBarra1 = p1.vida;
