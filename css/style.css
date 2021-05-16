@@ -27,11 +27,7 @@
 
 #fase3{
 
-    background-image: url("../img/fight.jpg") ;
-    /* no-repeat fixed center cover cover */
-    height: 100vh;
-    width: 100vw;
-    /* background-size: contain; */
+    background-image: linear-gradient(to right top, #1ea836, #00ad78, #00afaa, #00acca, #3ca6d4);
 }
 
 #fase4{
@@ -50,7 +46,10 @@
 .barras{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    position: relative;
+    right: 16em;
+    top: 4em;
 
     
 }
@@ -189,7 +188,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    /* background-color: black; */
     width: 100vw;
     height: 100vh;
 }
@@ -217,4 +216,15 @@
 .fotoVersus {
     width: 30em;
     height: 18em;
+}
+
+.winner {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    height: 20em;
+    width: 15em;
+    margin: 6em;
+    top: -3em;
+    left: 8.8em;
 }
