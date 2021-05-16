@@ -35,6 +35,11 @@
     background-size: cover;
    
 }
+#fase5{
+
+    background-image: linear-gradient(to right top, #1ea836, #00ad78, #00afaa, #00acca, #3ca6d4);
+
+}
 .batalla{
     height: 100vh;
     width: 100vw;
@@ -217,6 +222,16 @@
     width: 30em;
     height: 18em;
 }
+.maquetaEquipos2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 2em;
+    top: -4em;
+    height: 2em;
+}
 
 .winner {
     display: flex;
@@ -228,3 +243,13 @@
     top: -3em;
     left: 8.8em;
 }
+
+#textoGanador{
+    font-family:'VT323', monospace;
+    font-size: 2em;
+    color: white;
+}
+
+/* #winner{
+    
+} */

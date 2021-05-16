@@ -33,8 +33,7 @@ const chooseFighter = (fighter) => {
             team2.push(allPlayers[fighter]);
 
             if(team2.length == 1){
-                console.log("ESTE ES EL TEAM1 ", team1);
-                console.log("ESTE ES EL TEAM2 ", team2);
+
                 llenaEquipos();
                 cambiaFase("fase3");
 
@@ -95,16 +94,16 @@ const fighting = () => {
 
 
     // if(p1<=0 || p2 <=0){cambiaFase("fase5")}
-    if( p1.vida <= 0 ) { //Print the winner
+    if( p1.vida <= 0 ) { 
 
         let winner = document.getElementById("winner");
         winner.innerHTML = `
         <div class="teamCharacters">
             <div class="containerWinner" id="winnerName"></div>
-            <div><img class="winner" src="img/${team2[0].nombre}.png" alt="luchador2"></div>
+            <div><img class="winner" src="img/${team2[0].nombre}.png" alt="luchador1"></div>
         </div>
         `
-        changeFase("fase5");
+        cambiaFase("fase5");
 
     } else if( p2.vida <= 0 ) {
 
@@ -115,10 +114,10 @@ const fighting = () => {
             <div><img class="winner" src="img/${team1[0].nombre}.png" alt="luchador2"></div>
         </div>
         `
-        changeFase("fase5");
+        cambiaFase("fase5");
 
     } else if(p1.vida <= 0 && p2.vida <= 0){
-            alert("empata");
+            alert("empate");
     }
 }
 
