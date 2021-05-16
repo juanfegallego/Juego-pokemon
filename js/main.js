@@ -119,6 +119,15 @@ const fighting = () => {
     } else if(p1.vida <= 0 && p2.vida <= 0){
             alert("empate");
     }
+    let resetGame = document.getElementById("reset");
+
+        resetGame.addEventListener("click",showWinner);
+        
+        function showWinner() {
+        
+            cambiaFase("fase1");
+            window.location.reload();
+        }
 }
 
 const updateLife = () => {
@@ -129,3 +138,4 @@ const updateLife = () => {
         vidaBarra2 = (vidaBarra2 * 100)/400;
         document.getElementById("healthP2").style.width = vidaBarra2+"%";
 }
+
