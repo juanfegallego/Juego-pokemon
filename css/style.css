@@ -139,7 +139,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: rgb(0, 0, 0); */
     width: 100vw;
     height: 100vh;
 }
@@ -308,12 +307,6 @@
     left: 42em;
     z-index: 1;
 }
-/* #textoPA{
-    font-family:'VT323', monospace;
-    font-size: 5em;
-    color: white;
-} */
-
 #return{
     height: 5em;
     width: 5em;
