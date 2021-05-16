@@ -72,7 +72,14 @@ const llenaEquipos = () => {
 const fight = () => {
     let fight = document.getElementById("fight");
     fight.innerHTML =
-    `
+    `   <div class="barras">
+            <div class="pelea">
+                <div id="healthP1"></div>
+            </div>
+            <div class="pelea">
+                <div id="healthP2"></div>
+            </div>
+        </div>
     <div><img class="fighter1" src="img/${team1[0].nombre}.png" alt="luchador1"></div>
     <div><img class="pokeball" onclick="fighting()" src="img/start.png" alt="start"></div>
     <div><img class="fighter2" src="img/${team2[0].nombre}.png" alt="luchador2"></div>

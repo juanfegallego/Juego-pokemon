@@ -4,11 +4,9 @@
     padding: 0em;
 }
 
-
-
 #fase1{
 
-    background-image: url("/img/fondoMov2.gif");
+    background-image: url("../img/fondoMov2.gif");
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -52,44 +50,21 @@
 .barras{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+
+    
 }
 .pelea{
     display: flex;
     position: relative;
 
-    top: 3em;
-    left: 47em;
+
+    
+    left: 20em;
     width: 30%;
     border-radius: 10px;
     background-color: grey;
-}
-
-.luchador1{
-    height: 5em;
-    width: 8em;
-}
-.luchador2{
-    height: 5em;
-    width: 8em;   
-}
-.fighter1, .fighter2 {
-
-    height: 20em;
-    width: 20em;
-    position: relative;
-    top: 15em;
-    left: 9em;
-
-    
-}
-.life1{
-    display: flex;
-    position: relative;
-    /* top: -16.9em; */
-    left: 4em;
-    /* width: 100%; */
-    border-radius: 2.3em;
-    background-color: grey;
+    box-shadow: 1em 1em 3em black;
 }
 #healthP1{
     display: flex;
@@ -112,12 +87,38 @@
     transition: width 0.6s;
 }
 
-.pokeball{
-    height: 8em;
+.luchador1{
+    height: 5em;
     width: 8em;
+}
+.luchador2{
+    height: 5em;
+    width: 8em;   
+}
+.fighter1{
+    height: 20em;
+    width: 20em;
+    position: relative;
+    top:30em;
+    left: 9em;
+
+}
+.fighter2{
+    height: 20em;
+    width: 20em;
     position: relative;
     top: 15em;
-    left: 5em;
+    left: 69em;
+}
+
+
+
+.pokeball{
+    height: 10em;
+    width: 10em;
+    position: relative;
+    top: 40em;
+    left: 35em;
 }
 .secvis {
     display: flex;
@@ -130,9 +131,14 @@
 }
 
 .textoBasico {
+    font-size: 3em;
+    font-family: 'VT323', monospace;
     color: white;
-
-
+}
+.textoBasico:hover{
+    color: red;
+    transition: 2s;
+    zoom:150%;
 }
 .top{
 
