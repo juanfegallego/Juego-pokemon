@@ -139,3 +139,8 @@ const updateLife = () => {
         document.getElementById("healthP2").style.width = vidaBarra2+"%";
 }
 
+const music = document.getElementById('audioBtn');
+
+music.addEventListener('click', () => {
+    window.location.reload();
+})
