@@ -41,7 +41,7 @@ const chooseFighter = (fighter) => {
                 setTimeout(() => {
                     fight();
                     cambiaFase("fase4");
-                }, 1000); //tiene que ser 5000
+                }, 2000);
             }
             
         }
@@ -61,7 +61,7 @@ const llenaEquipos = () => {
     <div class="teamCharacters">
         <div><img class="picFighter" src="img/${team1[0].nombre}.png" alt="luchador1"></div>
     </div>
-    <div class="fightPanel"><img class="fotoVersus" src="img/fight.jpg" alt="lucha"></div>
+    <div class="fightPanel"><img class="fotoVersus" src="img/fight.png" alt="lucha"></div>
     <div class="teamCharacters">
         <div><img class="picFighter" src="img/${team2[0].nombre}.png" alt="luchador2"></div>
         
@@ -72,14 +72,7 @@ const llenaEquipos = () => {
 const fight = () => {
     let fight = document.getElementById("fight");
     fight.innerHTML =
-    `   <div class="barras">
-            <div class="pelea">
-                <div id="healthP1"></div>
-            </div>
-            <div class="pelea">
-                <div id="healthP2"></div>
-            </div>
-        </div>
+    `   
     <div><img class="fighter1" src="img/${team1[0].nombre}.png" alt="luchador1"></div>
     <div><img class="pokeball" onclick="fighting()" src="img/start.png" alt="start"></div>
     <div><img class="fighter2" src="img/${team2[0].nombre}.png" alt="luchador2"></div>
@@ -99,31 +92,35 @@ const fighting = () => {
     p2.attack(p1);
     updateLife();
     console.log(p1.vida,p2.vida);
-    // do{
 
-    // }while();
 
-    if(p1<=0 || p2 <=0){cambiaFase("fase5")}
+    // if(p1<=0 || p2 <=0){cambiaFase("fase5")}
+    if( p1.vida <= 0 ) { //Print the winner
+
+        let winner = document.getElementById("winner");
+        winner.innerHTML = `
+        <div class="teamCharacters">
+            <div class="containerWinner" id="winnerName"></div>
+            <div><img class="winner" src="img/${team2[0].nombre}.png" alt="luchador2"></div>
+        </div>
+        `
+        changeFase("fase5");
+
+    } else if( p2.vida <= 0 ) {
+
+        let winner = document.getElementById("winner");
+        winner.innerHTML = `
+        <div class="teamCharacters">
+            <div class="containerWinner" id="winnerName"></div>
+            <div><img class="winner" src="img/${team1[0].nombre}.png" alt="luchador2"></div>
+        </div>
+        `
+        changeFase("fase5");
+
+    } else if(p1.vida <= 0 && p2.vida <= 0){
+            alert("empata");
+    }
 }
-
-//intento de vida a 0
-// if ((fighter1.life > 0 ) && (fighter2.life > 0 )) {
-
-//     life1.innerHTML = `${fighter1.life}`;
-//     life2.innerHTML = `${fighter2.life}`;
-
-// } else if (fighter1.life <= 0){ 
-
-//     life1.innerHTML = "0" 
-
-// } else {
-
-//         life2.innerHTML = "0"
-// }
-     
-
-// Winner();{}
-
 
 const updateLife = () => {
     let vidaBarra1 = p1.vida;
