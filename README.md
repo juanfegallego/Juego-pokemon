@@ -11,7 +11,7 @@ La tematica elegida ha sido ![Pokemon](/img/logo.png)Ya que este era uno de mis 
 la tipografía utilizada en el proyecto ha sido la [VT323](https://fonts.google.com/specimen/VT323) de [Google Fonts](https://fonts.google.com/) para poder darle un toque mas retro al juego.
 
 <br>
-# ÍNDICE 
+#ÍNDICE 
 
 -[¿Qué es?🧐](#¿Qué-es?)
 -[Requisitos⚙️](#Requisitos)
